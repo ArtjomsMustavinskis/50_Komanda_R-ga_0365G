@@ -28,6 +28,7 @@ ________________________________________
 - "Shift + 4" → sadala 4 uz (2 un 2), atņem -1 punktu pretiniekam
 - Pele un tastatūra → lai veiktu izvēli spēles interfeisā
 6. Papildu funkcijas:
+  
 O Interaktīvu izvēlni:
 Galvenā izvēlne ar iespējām: “Sākt spēli” vai “Iziet”.
 
