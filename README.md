@@ -17,23 +17,26 @@ Lūdzu, visus failus un izmaiņas pievienojiet mapē “Shared”.
 ________________________________________
 Īss spēles apraksts:
 1. Spēles sākumā tiek ģenerēta nejauša skaitļu virkne (piemēram, [1, 2, 4, 2, 1]).
+  
 2. Katram spēlētājam sākotnēji ir 0 punkti.
+  
 3. Gājiena laikā spēlētājs var:
 -	Paņemt jebkuru skaitli no virknes un pieskaitīt to savam punktu skaitam.
 -	Sadalīt skaitli “2” divos skaitļos “1” un “1” un pieskaitīt vienu punktu pretiniekam.
 -	Sadalīt skaitli “4” divos skaitļos “2” un “2” un atņemt vienu punktu no pretinieka punktu skaita.
 4.	Spēle beidzas, kad virkne ir tukša. Uzvar tas spēlētājs, kuram ir vairāk punktu.
+ 	
 5. Vadība:
 - "Shift + 2" → sadala 2 uz (1 un 1), dod +1 punktu pretiniekam
 - "Shift + 4" → sadala 4 uz (2 un 2), atņem -1 punktu pretiniekam
 - Pele un tastatūra → lai veiktu izvēli spēles interfeisā
+
 6. Papildu funkcijas:
-  
 O Interaktīvu izvēlni:
-Galvenā izvēlne ar iespējām: “Sākt spēli” vai “Iziet”.
+- Galvenā izvēlne ar iespējām: “Sākt spēli” vai “Iziet”.
 
 O Spēlētāja vārds:
-Ievades lauks, kurā spēlētājs var ierakstīt savu vārdu.
+- Ievades lauks, kurā spēlētājs var ierakstīt savu vārdu.
 
 O Spēles iestatījumi:
 - Algoritma izvēle: Minimax vai Alpha-Beta.
