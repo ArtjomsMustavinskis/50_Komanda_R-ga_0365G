@@ -27,7 +27,11 @@ ________________________________________
 - "Shift + 2" → sadala 2 uz (1 un 1), dod +1 punktu pretiniekam
 - "Shift + 4" → sadala 4 uz (2 un 2), atņem -1 punktu pretiniekam
 - Pele un tastatūra → lai veiktu izvēli spēles interfeisā
-________________________________________
+6. Papildu funkcijas:
+  Interaktīvu izvēlni:
+  Spēlētāja vārds:
+  Spēles iestatījumi:
+_______________________________________
 Nepieciešamās bibliotēkas:
 - Pygame – interfeisam un spēles logam
 - random – sākotnējās virknes ģenerēšanai
