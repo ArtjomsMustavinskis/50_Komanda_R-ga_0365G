@@ -2,19 +2,19 @@
 Projekta struktūrai jābūt šādai (kopā 4 faili):
 
 1. Interface.py – Lietotāja saskarne (UI) ar iespēju:
--Apskatīt spēles skaitļu virkni
--Veikt gājienus
--Sākt jaunu spēli
--Redzēt punktus un uzvarētāju
+- Apskatīt spēles skaitļu virkni
+- Veikt gājienus
+- Sākt jaunu spēli
+- Redzēt punktus un uzvarētāju
 
 2. Minimax.py:
-AI loģika ar klasisko Minimax algoritmu, kur dators izvēlas labāko iespējamo gājienu, apsverot visus iespējamos iznākumus līdz spēles beigām.
+- AI loģika ar klasisko Minimax algoritmu, kur dators izvēlas labāko iespējamo gājienu, apsverot visus iespējamos iznākumus līdz spēles beigām.
 
 3. AlfaBeta.py:
-AI loģika ar uzlabotu Alpha-Beta griešanas algoritmu, kas ir efektīvāka versija Minimax algoritmam ar to pašu mērķi — izvēlēties optimālo gājienu.
+- AI loģika ar uzlabotu Alpha-Beta griešanas algoritmu, kas ir efektīvāka versija Minimax algoritmam ar to pašu mērķi — izvēlēties optimālo gājienu.
 
 4. Main.py:
-Galvenais fails, kas apvieno interfeisu ar izvēlēto algoritmu. Šeit tiek inicializēta spēle, piesaistīta loģika un palaista programma.
+- Galvenais fails, kas apvieno interfeisu ar izvēlēto algoritmu. Šeit tiek inicializēta spēle, piesaistīta loģika un palaista programma.
 
 Lūdzu, visus failus un izmaiņas pievienojiet mapē “Shared”.
 
