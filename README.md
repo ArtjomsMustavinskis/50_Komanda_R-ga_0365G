@@ -10,3 +10,13 @@ Projekta struktūrai jābūt šādai (kopā 4 faili):
 4. Apvienojums – fails, kas apvieno interfeisu ar izvēlēto algoritmu un veido pilnībā funkcionējošu spēli.
 
 Lūdzu, visus failus un izmaiņas pievienojiet mapē “Shared”.
+
+________________________________________
+2. Īss spēles apraksts
+1.	Spēles sākumā tiek piedāvāta ģenerētā skaitļu virkne. Katram spēlētājam sākotnēji ir 0 punkti.
+2.	Spēlētāji gājienus veic secīgi. Gājiena laikā spēlētājs var: 
+-	Paņemt jebkuru skaitli no virknes un pieskaitīt to savam punktu skaitam.
+-	Sadalīt skaitli “2” divos skaitļos “1” un “1” un pieskaitīt vienu punktu pretiniekam.
+-	Sadalīt skaitli “4” divos skaitļos “2” un “2” un atņemt vienu punktu no pretinieka punktu skaita.
+3.	Spēle beidzas, kad virkne ir tukša. Uzvar tas spēlētājs, kuram ir vairāk punktu.
+________________________________________
