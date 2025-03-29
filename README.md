@@ -2,7 +2,11 @@
 Projekta struktūrai jābūt šādai (kopā 4 faili):
 
 1. Interfeiss – lietotāja saskarne spēlei.
-
+  Lietotāja saskarne (UI) ar iespēju:
+  Apskatīt spēles skaitļu virkni
+  Veikt gājienus
+  Sākt jaunu spēli
+  Redzēt punktus un uzvarētāju
 2. Minimax algoritms – loģika ar Minimax stratēģiju.
 
 3. Alfa-beta algoritms – loģika ar Alpha-Beta griešanu.
