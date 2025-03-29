@@ -28,9 +28,26 @@ ________________________________________
 - "Shift + 4" → sadala 4 uz (2 un 2), atņem -1 punktu pretiniekam
 - Pele un tastatūra → lai veiktu izvēli spēles interfeisā
 6. Papildu funkcijas:
-  Interaktīvu izvēlni:
-  Spēlētāja vārds:
-  Spēles iestatījumi:
+O Interaktīvu izvēlni:
+Galvenā izvēlne ar iespējām: “Sākt spēli” vai “Iziet”.
+
+O Spēlētāja vārds:
+Ievades lauks, kurā spēlētājs var ierakstīt savu vārdu.
+
+O Spēles iestatījumi:
+- Algoritma izvēle: Minimax vai Alpha-Beta.
+- Virknes garuma izvēle: no 15 līdz 20.
+- Kurš sāk pirmais: spēlētājs vai dators.
+
+O Punktu uzskaite un līmeņi:
+- Spēle saglabā labāko sasniegto līmeni.
+- Katru reizi, kad spēlētājs uzvar, līmenis paaugstinās.
+- Ja zaudē — spēle sākas no pirmā līmeņa.
+
+O Dažādi ekrāni:
+- Noteikumu ekrāns ar detalizētu aprakstu pirms spēles.
+- Spēles logs, kur redzami spēlētāju punkti, līmenis un virkne.
+- Uzvaras/zaudējuma ekrāni ar iespējām turpināt spēli vai atgriezties uz galveno izvēlni.
 _______________________________________
 Nepieciešamās bibliotēkas:
 - Pygame – interfeisam un spēles logam
