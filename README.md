@@ -32,6 +32,7 @@ ________________________________________
 - Pele un tastatūra → lai veiktu izvēli spēles interfeisā
 
 6. Papildu funkcijas:
+
 O Interaktīvu izvēlni:
 - Galvenā izvēlne ar iespējām: “Sākt spēli” vai “Iziet”.
 
