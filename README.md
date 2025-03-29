@@ -12,7 +12,7 @@ Projekta struktūrai jābūt šādai (kopā 4 faili):
 Lūdzu, visus failus un izmaiņas pievienojiet mapē “Shared”.
 
 ________________________________________
-2. Īss spēles apraksts
+Īss spēles apraksts
 1.	Spēles sākumā tiek piedāvāta ģenerētā skaitļu virkne. Katram spēlētājam sākotnēji ir 0 punkti.
 2.	Spēlētāji gājienus veic secīgi. Gājiena laikā spēlētājs var: 
 -	Paņemt jebkuru skaitli no virknes un pieskaitīt to savam punktu skaitam.
