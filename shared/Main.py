@@ -2,9 +2,13 @@ import pygame
 import random
 import sys
 
-
+# ======================================================================
+# ======================== MINIMAX & ALPHA-BETA ========================
+# ======================================================================
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # Šeit definējam visas nepieciešamās funkcijas Minimax un Alpha-Beta,
 # lai AI varētu izvēlēties labāko gājienu (take vai split).
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # --------- Minimax Implementation --------- #
 import copy
@@ -258,7 +262,6 @@ def ai_move_alphabeta(sequence, ai_score, player_score):
         return sequence, ai_score, player_score
 
     new_sequence, new_ai, new_human, _ = apply_move_ab(sequence, ai_score, player_score, True, move)
-    # Ņem vērā, ka 'player_score' šeit ir 'human_score'
     return new_sequence, new_ai, new_human
 
 # ======================================================================
@@ -293,6 +296,7 @@ STATE_GAME            = 3
 STATE_GAME_OVER_WIN   = 4
 STATE_GAME_OVER_LOSE  = 5
 STATE_RULES           = 6
+STATE_GAME_OVER_DRAW  = 7   # JAUNS stāvoklis priekš neizšķirta
 
 # --- Simple Button class ---
 class Button:
@@ -427,7 +431,7 @@ def draw_rules_screen():
     title_rect = title_surf.get_rect(center=(WIDTH//2, 50))
     SCREEN.blit(title_surf, title_rect)
 
-    # Explanation (in English, though you requested Latvian comments; let's keep it consistent)
+    # Explanation
     lines = [
         "1. Initially, a sequence of numbers is generated. Each player starts with 0 points.",
         "2. Players move in turns. During a turn, a player can:",
@@ -515,7 +519,20 @@ def draw_game_over_lose(ai_name):
     txt_rect = txt_surf.get_rect(center=(WIDTH//2, HEIGHT//3))
     SCREEN.blit(txt_surf, txt_rect)
 
-    txt_surf2 = FONT_MED.render(f"Victory goes to {ai_name} or it's a draw.", True, BLACK)
+    txt_surf2 = FONT_MED.render(f"Victory goes to {ai_name}.", True, BLACK)
+    txt_rect2 = txt_surf2.get_rect(center=(WIDTH//2, HEIGHT//2))
+    SCREEN.blit(txt_surf2, txt_rect2)
+
+def draw_game_over_draw():
+    """
+    Zīmējam ekrānu, ja spēle beidzas neizšķirti (player_score == ai_score).
+    """
+    SCREEN.fill(WHITE)
+    txt_surf = FONT_BIG.render("It's a draw!", True, BLACK)
+    txt_rect = txt_surf.get_rect(center=(WIDTH//2, HEIGHT//3))
+    SCREEN.blit(txt_surf, txt_rect)
+
+    txt_surf2 = FONT_MED.render("Tie game. Continue or go to Main Menu?", True, BLACK)
     txt_rect2 = txt_surf2.get_rect(center=(WIDTH//2, HEIGHT//2))
     SCREEN.blit(txt_surf2, txt_rect2)
 
@@ -657,15 +674,32 @@ def main():
                callback=go_main_menu, font=FONT_MED, color=RED)
     ]
 
+    # --- Draw Screen Buttons ---
+    # Same logic: user can continue or go to main menu
+    buttons_game_over_draw = [
+        Button(WIDTH//2 - 220, HEIGHT//2 + 50, 200, 60, "Main Menu",
+               callback=go_main_menu, font=FONT_MED, color=GRAY),
+        Button(WIDTH//2 + 20, HEIGHT//2 + 50, 200, 60, "Continue",
+               callback=continue_game, font=FONT_MED, color=GREEN)
+    ]
+
     # --- End Game function ---
-    def end_game(winner):
+    def end_game(result):
+        """
+        result var būt: 'player' (win), 'ai' (lose) vai 'draw' (neizšķirts).
+        """
         nonlocal state, best_level, current_level
-        if winner == 'player':
+        if result == 'player':
+            # Player win
             if current_level > best_level:
                 best_level = current_level
             state = STATE_GAME_OVER_WIN
-        else:
+        elif result == 'ai':
+            # Player lose
             state = STATE_GAME_OVER_LOSE
+        else:
+            # draw
+            state = STATE_GAME_OVER_DRAW
 
     # --- Main Loop ---
     running = True
@@ -744,8 +778,10 @@ def main():
                 if len(sequence) == 0:
                     if player_score > ai_score:
                         end_game("player")
-                    else:
+                    elif ai_score > player_score:
                         end_game("ai")
+                    else:
+                        end_game("draw")
 
             elif state == STATE_GAME_OVER_WIN:
                 for btn in buttons_game_over_win:
@@ -753,6 +789,10 @@ def main():
 
             elif state == STATE_GAME_OVER_LOSE:
                 for btn in buttons_game_over_lose:
+                    btn.check_event(event)
+
+            elif state == STATE_GAME_OVER_DRAW:
+                for btn in buttons_game_over_draw:
                     btn.check_event(event)
 
         # --- Rendering ---
@@ -790,10 +830,14 @@ def main():
             for btn in buttons_game_over_lose:
                 btn.draw(SCREEN)
 
+        elif state == STATE_GAME_OVER_DRAW:
+            draw_game_over_draw()
+            for btn in buttons_game_over_draw:
+                btn.draw(SCREEN)
+
         pygame.display.flip()
 
     pygame.quit()
 
 if __name__ == "__main__":
     main()
-
