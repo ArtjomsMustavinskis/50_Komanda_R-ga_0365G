@@ -53,4 +53,5 @@ _______________________________________
 Nepieciešamās bibliotēkas:
 - Pygame – interfeisam un spēles logam
 - random – sākotnējās virknes ģenerēšanai
+- sys - manual program termination.
 ________________________________________
